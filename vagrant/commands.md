@@ -13,4 +13,9 @@ vagrant provision: Run any software provisioners (shell scripts, ansible, puppet
 ### Reload vagrant VMs after change to provisioners
 vagrant reload --provision
 
+### Listing all available boxes
+vagrant box list  
+
+### Executing a command on a guest VM
+vagrant ssh -c "ls /"
 
