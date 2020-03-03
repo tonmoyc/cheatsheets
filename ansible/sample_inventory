@@ -1,0 +1,3 @@
+[webservers]
+websrv ansible_host=websrv.example.com
+dbsrv ansible_host=dbsrv.example.com
