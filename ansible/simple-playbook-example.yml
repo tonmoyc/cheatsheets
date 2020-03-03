@@ -1,0 +1,25 @@
+---
+- hosts: webservers
+  become: yes
+  tasks:
+  - name: latest httpd installation
+    yum:
+      name: httpd
+      state: latest
+  - name: write apache config file
+    template:
+      src: /srv/httpd.j2
+      dest: /etc/httpd.conf
+
+ - hosts: database
+   remote_user: root
+   tasks:
+   - name: postgres installation
+     yum:
+       name: postgresql
+       state: latest
+   - name: start postgres
+     service:
+       name: postgresql
+       state: started
+...
